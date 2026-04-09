@@ -1,4 +1,4 @@
-# GerenciadorProduto
+# Gerenciador de Produtos
 
 Aplicacao full stack do teste tecnico com:
 
