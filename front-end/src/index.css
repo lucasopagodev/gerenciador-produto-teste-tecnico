@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 51 65 85;
+  --color-secondary: 100 116 139;
+  --color-success: 71 85 105;
+  --color-error: 220 38 38;
+  --color-warning: 217 119 6;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(226, 232, 240, 0.55), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(241, 245, 249, 0.9), transparent 30%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen bg-transparent text-slate-900;
+  }
+
+  .app-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .panel {
+    @apply rounded-2xl bg-white shadow-panel;
+  }
+
+  .eyebrow {
+    @apply inline-flex w-fit rounded-lg bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl;
+  }
+
+  .section-copy {
+    @apply text-sm leading-6 text-slate-600;
+  }
+
+  .label-text {
+    @apply block text-sm font-medium text-slate-700;
+  }
+
+  .hint-text {
+    @apply text-xs leading-5 text-slate-500;
+  }
+
+  .error-text {
+    @apply text-xs leading-5 text-red-600;
+  }
+
+  .nav-pill {
+    @apply rounded-lg px-3 py-2 text-sm transition;
+  }
+
+  .nav-pill-active {
+    @apply bg-emerald-600 text-white;
+  }
+
+  .nav-pill-idle {
+    @apply text-emerald-700 hover:bg-emerald-50;
+  }
+
+  .auth-stage {
+    @apply relative min-h-screen w-full lg:grid lg:grid-cols-[0.95fr_1.05fr];
+  }
+
+  .auth-card {
+    @apply contents;
+  }
+
+  .auth-pane {
+    @apply flex min-h-screen flex-col justify-between bg-[#f8fafc] px-5 py-6 sm:px-8 sm:py-8 lg:px-14 lg:py-10;
+  }
+
+  .auth-visual {
+    @apply relative hidden bg-[#334155] lg:block lg:min-h-screen;
+  }
+
+  .auth-visual::before {
+    content: '';
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.20),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.12),_transparent_24%)];
+  }
+
+  .auth-visual::after {
+    content: '';
+    @apply absolute inset-0;
+  }
+}
